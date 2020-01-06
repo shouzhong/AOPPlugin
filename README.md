@@ -6,15 +6,11 @@ AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通�
 在项目根目录的build.gradle文件中
 ```
 dependencies {
-    classpath 'com.shouzhong.aop:AOPPlugin:1.0.1'
+    classpath 'com.shouzhong.aop:AOPPlugin:1.0.7'
     ...
 }
 ```
 在module的build.gradle文件中
 ```
 apply plugin: `com.shouzhong.aop`
-
-dependencies {
-    implementation 'org.aspectj:aspectjrt:1.8.9'
-}
 ```

@@ -1,4 +1,4 @@
-package com.shouzhong.aop;
+package com.shouzhong.aop
 
 import com.android.build.gradle.AppPlugin
 import com.android.build.gradle.LibraryPlugin
@@ -28,7 +28,7 @@ class AOPPlugin implements Plugin<Project> {
         }
 
         project.dependencies {
-            implementation 'org.aspectj:aspectjrt:1.8.9'
+            api 'org.aspectj:aspectjrt:1.9.1'
         }
 
         variants.all { variant ->
@@ -42,7 +42,7 @@ class AOPPlugin implements Plugin<Project> {
             }
             javaCompile.doLast {
                 String[] args = ["-showWeaveInfo",
-                                 "-1.8",
+                                 "-1.9",
                                  "-inpath", javaCompile.destinationDir.toString(),
                                  "-aspectpath", javaCompile.classpath.asPath,
                                  "-d", javaCompile.destinationDir.toString(),
@@ -50,24 +50,24 @@ class AOPPlugin implements Plugin<Project> {
                                  "-bootclasspath", project.android.bootClasspath.join(File.pathSeparator)]
                 log.debug "ajc args: " + Arrays.toString(args)
 
-                MessageHandler handler = new MessageHandler(true);
-                new Main().run(args, handler);
+                MessageHandler handler = new MessageHandler(true)
+                new Main().run(args, handler)
                 for (IMessage message : handler.getMessages(null, true)) {
                     switch (message.getKind()) {
                         case IMessage.ABORT:
                         case IMessage.ERROR:
                         case IMessage.FAIL:
                             log.error message.message, message.thrown
-                            break;
+                            break
                         case IMessage.WARNING:
                             log.warn message.message, message.thrown
-                            break;
+                            break
                         case IMessage.INFO:
                             log.info message.message, message.thrown
-                            break;
+                            break
                         case IMessage.DEBUG:
                             log.debug message.message, message.thrown
-                            break;
+                            break
                     }
                 }
             }
