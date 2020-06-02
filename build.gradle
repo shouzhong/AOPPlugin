@@ -2,7 +2,7 @@
 
 buildscript {
     repositories {
-        // google()
+        google()
         jcenter()
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -10,7 +10,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:4.0.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
         classpath 'com.shouzhong.plugin:AOP:1.1.0'
 
@@ -21,7 +21,7 @@ buildscript {
 
 allprojects {
     repositories {
-        // google()
+        google()
         jcenter()
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }

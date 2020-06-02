@@ -6,7 +6,7 @@ sourceCompatibility = JavaVersion.VERSION_1_7
 dependencies {
     implementation gradleApi()//gradle sdk
     implementation localGroovy()//groovy sdk
-    compileOnly 'com.android.tools.build:gradle:3.5.0'
+    compileOnly 'com.android.tools.build:gradle:4.0.0'
     implementation 'org.aspectj:aspectjtools:1.9.1'
     implementation 'org.aspectj:aspectjweaver:1.9.1'
 }
